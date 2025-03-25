@@ -57,11 +57,11 @@ function showResult(days) {
   switch (true) {
     case days < 1:
       desc =
-        "Custa menos que um dia de trabalho. Parece uma oportunidade, mas é bom ficar atento!";
+        "Custa menos que um dia de trabalho. Parece acessível, mas é bom ficar atento!";
       break;
     case days >= 1 && days < 7:
       desc =
-        "Menos que uma semana de trabalho. Vale a pena refletir, mas é um valor acessível.";
+        "Menos que uma semana de trabalho. Vale a pena refletir, mas parece viável.";
       break;
     case days >= 7 && days < 30:
       desc =
