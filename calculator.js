@@ -1,4 +1,5 @@
 const revenue = document.getElementById("revenue"),
+  calculatorForm = document.getElementById("calculator_form"),
   itemPrice = document.getElementById("item_price"),
   workedDays = document.getElementById("worked_days"),
   result = document.getElementById("result"),
@@ -98,3 +99,8 @@ function calculateDays() {
 
   showResult(days);
 }
+
+calculatorForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  calculateDays();
+});
