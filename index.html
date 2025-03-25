@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantos Dia$</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&text=account_balance_walletshopping_cartcalendar_monthcurrency_exchangeeventquery_stats"
+    />
+  </head>
+  <body>
+    <div
+      class="min-h-dvh w-dvw flex flex-col items-center justify-center md:bg-gray-50 py-5"
+    >
+      <form
+        onsubmit="event.preventDefault(); calculateDays()"
+        class="flex flex-col items-center px-8 py-10 max-w-xl w-full md:shadow-md md:border rounded-xl bg-white"
+      >
+        <img src="assets/logo.svg" class="h-8 mx-auto" />
+        <p class="text-gray-500 mt-4 text-center">
+          O verdadeiro preço das coisas? <strong>Seu tempo</strong>. <br />Veja
+          em quantos dias de trabalho você consegue comprá-las.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 w-full">
+          <div
+            class="border px-4 rounded-md flex-1 flex items-center gap-2 text-gray-600"
+          >
+            <span class="material-symbols-outlined">
+              account_balance_wallet
+            </span>
+            <input
+              type="number"
+              placeholder="Salário mensal (R$)"
+              class="flex-1 py-3 outline-none"
+              id="revenue"
+            />
+          </div>
+          <div
+            class="border px-4 rounded-md flex-1 flex items-center gap-2 text-gray-600"
+          >
+            <span class="material-symbols-outlined"> shopping_cart </span>
+            <input
+              type="number"
+              placeholder="Preço do item (R$)"
+              class="flex-1 py-3 outline-none"
+              id="item_price"
+            />
+          </div>
+          <div
+            class="border px-4 rounded-md flex-1 flex items-center gap-2 text-gray-600"
+          >
+            <span class="material-symbols-outlined"> calendar_month </span>
+            <input
+              type="number"
+              placeholder="Dias úteis (trabalhados) no mês"
+              class="flex-1 py-3 outline-none"
+              id="worked_days"
+            />
+          </div>
+        </div>
+        <button
+          class="bg-black text-white px-8 py-3 rounded-full mt-6 text-base font-medium hover:bg-gray-700 transition flex items-center gap-2"
+          type="submit"
+        >
+          <span class="material-symbols-outlined"> query_stats </span>
+          Mostrar estatísticas
+        </button>
+        <div
+          class="w-full px-8 py-6 mt-8 bg-gray-100 rounded-md text-center border hidden"
+          id="result"
+        >
+          <h3 class="text-xl font-semibold mb-4">Resultado</h3>
+          <div class="flex justify-center gap-3 md:gap-6 items-center">
+            <div class="text-center flex-1">
+              <span
+                class="material-symbols-outlined text-3xl text-green-500 mb-2"
+              >
+                currency_exchange
+              </span>
+              <p
+                class="text-2xl font-semibold text-green-800"
+                id="result_amount"
+              >
+                R$ 0
+              </p>
+              <p class="text-sm text-gray-500">Ganho por dia</p>
+            </div>
+            <div class="h-16 border-r border-gray-300 md:flex"></div>
+            <div class="text-center flex-1">
+              <span
+                class="material-symbols-outlined text-3xl text-blue-600 mb-2"
+              >
+                event
+              </span>
+              <p class="text-2xl font-semibold text-blue-800" id="result_days">
+                0
+              </p>
+              <p class="text-sm text-gray-500">Dias de trabalho</p>
+            </div>
+          </div>
+          <div
+            class="flex items-center mt-3 gap-1 justify-center w-fit md:mx-8 mx-auto"
+          >
+            <span class="material-symbols-outlined text-gray-400">
+              contact_support
+            </span>
+            <p
+              class="text-gray-800 mt-3 text-sm font-normal text-left"
+              id="result_desc"
+            >
+              Esse item custa menos de um dia de trabalho! Talvez valha a pena.
+            </p>
+          </div>
+        </div>
+      </form>
+      <div class="text-center text-gray-500 text-sm md:mt-6">
+        Calculadora feita com ☕️ por
+        <a
+          href="https://gabrielmeiradev.github.io"
+          target="_blank"
+          class="text-[#c41067]"
+          >Gabriel Meira</a
+        >
+      </div>
+    </div>
+
+    <script src="calculator.js" />
+  </body>
+</html>
